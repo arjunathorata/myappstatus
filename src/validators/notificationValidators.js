@@ -1,4 +1,4 @@
-const Joi = require('joi');
+import Joi from 'joi';
 
 const getNotificationsQuerySchema = Joi.object({
   page: Joi.number()
@@ -141,7 +141,7 @@ const notificationPreferencesSchema = Joi.object({
   systemNotifications: Joi.boolean().default(true)
 });
 
-module.exports = {
+export {
   getNotificationsQuerySchema,
   createNotificationSchema,
   markNotificationsReadSchema,

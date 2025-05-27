@@ -1,14 +1,14 @@
-const express = require('express');
-const processInstanceController = require('../controllers/processInstanceController');
-const { authenticate, authorize } = require('../middleware/auth');
-const { validate, validateObjectId, validateQuery } = require('../middleware/validation');
-const {
+import express from 'express';
+import processInstanceController from '../controllers/processInstanceController.js';
+import { authenticate, authorize } from '../middleware/auth.js';
+import { validate, validateObjectId, validateQuery } from '../middleware/validation.js';
+import {
   createProcessInstanceSchema,
   updateProcessInstanceSchema,
   getProcessInstancesQuerySchema,
   updateVariablesSchema,
   addCommentSchema
-} = require('../validators/processInstanceValidators');
+} from '../validators/processInstanceValidators.js';
 
 const router = express.Router();
 

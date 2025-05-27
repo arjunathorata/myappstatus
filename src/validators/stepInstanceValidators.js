@@ -1,4 +1,4 @@
-const Joi = require('joi');
+import Joi from 'joi';
 
 const getStepInstancesQuerySchema = Joi.object({
   page: Joi.number()
@@ -174,7 +174,7 @@ const skipStepSchema = Joi.object({
     })
 });
 
-module.exports = {
+export {
   getStepInstancesQuerySchema,
   completeStepSchema,
   assignStepSchema,

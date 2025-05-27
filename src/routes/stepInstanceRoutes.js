@@ -1,14 +1,14 @@
-const express = require('express');
-const stepInstanceController = require('../controllers/stepInstanceController');
-const { authenticate, authorize } = require('../middleware/auth');
-const { validate, validateObjectId, validateQuery } = require('../middleware/validation');
-const {
+import express from 'express';
+import stepInstanceController from '../controllers/stepInstanceController.js';
+import { authenticate, authorize } from '../middleware/auth.js';
+import { validate, validateObjectId, validateQuery } from '../middleware/validation.js';
+import {
   getStepInstancesQuerySchema,
   completeStepSchema,
   assignStepSchema,
   addCommentSchema,
   escalateStepSchema
-} = require('../validators/stepInstanceValidators');
+} from '../validators/stepInstanceValidators.js';
 
 const router = express.Router();
 

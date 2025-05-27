@@ -1,4 +1,4 @@
-const Joi = require('joi');
+import Joi from 'joi';
 
 const createProcessInstanceSchema = Joi.object({
   processTemplateId: Joi.string()
@@ -160,7 +160,7 @@ const addCommentSchema = Joi.object({
     .default(false)
 });
 
-module.exports = {
+export {
   createProcessInstanceSchema,
   updateProcessInstanceSchema,
   getProcessInstancesQuerySchema,

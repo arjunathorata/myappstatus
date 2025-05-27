@@ -128,10 +128,3 @@ export const validateFileUpload = (options = {}) => {
   };
 };
 
-export default {
-  validate,
-  validateObjectId,
-  validateQuery,
-  validateObjectIdArray,
-  validateFileUpload
-};

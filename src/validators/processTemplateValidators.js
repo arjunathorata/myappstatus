@@ -1,6 +1,6 @@
 import Joi from 'joi';
 
-const stepSchema = Joi.object({
+export const stepSchema = Joi.object({
   stepId: Joi.string()
     .required()
     .trim()
@@ -71,7 +71,7 @@ const stepSchema = Joi.object({
   }).optional().default({ x: 0, y: 0 })
 });
 
-const variableSchema = Joi.object({
+export const variableSchema = Joi.object({
   name: Joi.string()
     .required()
     .trim()
@@ -91,7 +91,7 @@ const variableSchema = Joi.object({
     .optional()
 });
 
-const createProcessTemplateSchema = Joi.object({
+export const createProcessTemplateSchema = Joi.object({
   name: Joi.string()
     .required()
     .trim()
@@ -161,7 +161,7 @@ const createProcessTemplateSchema = Joi.object({
     .default([])
 });
 
-const updateProcessTemplateSchema = Joi.object({
+export const updateProcessTemplateSchema = Joi.object({
   name: Joi.string()
     .trim()
     .min(1)
@@ -202,7 +202,7 @@ const updateProcessTemplateSchema = Joi.object({
     .optional()
 });
 
-const getProcessTemplatesQuerySchema = Joi.object({
+export const getProcessTemplatesQuerySchema = Joi.object({
   page: Joi.number()
     .integer()
     .min(1)
@@ -244,7 +244,7 @@ const getProcessTemplatesQuerySchema = Joi.object({
     .default('desc')
 });
 
-const publishTemplateSchema = Joi.object({
+export const publishTemplateSchema = Joi.object({
   version: Joi.string()
     .trim()
     .pattern(/^\d+\.\d+\.\d+$/)
@@ -254,7 +254,7 @@ const publishTemplateSchema = Joi.object({
     })
 });
 
-const validateTemplateSchema = Joi.object({
+export const validateTemplateSchema = Joi.object({
   checkReferences: Joi.boolean()
     .default(true),
   
@@ -262,7 +262,7 @@ const validateTemplateSchema = Joi.object({
     .default(true)
 });
 
-const createVersionSchema = Joi.object({
+export const createVersionSchema = Joi.object({
   version: Joi.string()
     .required()
     .trim()
@@ -279,11 +279,5 @@ const createVersionSchema = Joi.object({
     .allow('')
 });
 
-export {
-  createProcessTemplateSchema,
-  updateProcessTemplateSchema,
-  getProcessTemplatesQuerySchema,
-  publishTemplateSchema,
-  validateTemplateSchema,
-  createVersionSchema
-};
+
+
