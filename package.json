@@ -1,0 +1,170 @@
+{
+  "name": "myappstatus",
+  "version": "1.0.0",
+  "description": "MyAppStatus - Business Process Management System with Express.js and MongoDB",
+  "main": "src/app.js",
+  "type": "module",
+  "scripts": {
+    "setup": "node scripts/start.js",
+    "start": "node scripts/start.js",
+    "dev": "nodemon scripts/start.js",
+    "start:app": "node src/app.js",
+    "test": "jest --experimental-vm-modules",
+    "test:watch": "jest --watch --experimental-vm-modules",
+    "test:coverage": "jest --coverage --experimental-vm-modules",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix",
+    "format": "prettier --write src/**/*.js",
+    "seed": "node scripts/seed.js",
+    "docs": "swagger-jsdoc -d swaggerDef.js src/routes/*.js -o docs/swagger.json",
+    "build": "echo 'No build step required for Node.js'",
+    "migrate": "node scripts/migrate.js",
+    "backup": "node scripts/backup.js",
+    "clean": "rm -rf logs/* uploads/temp/*",
+    "health": "node scripts/health-check.js"
+  },
+  "keywords": [
+    "myappstatus",
+    "app-status",
+    "bpm", 
+    "workflow", 
+    "business-process", 
+    "express", 
+    "mongodb", 
+    "process-management",
+    "task-management",
+    "workflow-engine",
+    "enterprise",
+    "status-tracking"
+  ],
+  "author": "arjunathorata",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.4.0",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "joi": "^17.13.1",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "express-rate-limit": "^7.2.0",
+    "winston": "^3.13.0",
+    "nodemailer": "^6.9.13",
+    "multer": "^1.4.5-lts.1",
+    "uuid": "^9.0.1",
+    "dayjs": "^1.11.11",
+    "redis": "^4.6.13",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0",
+    "dotenv": "^16.4.5",
+    "compression": "^1.7.4",
+    "morgan": "^1.10.0",
+    "express-mongo-sanitize": "^2.2.0",
+    "dompurify": "^3.1.4",
+    "jsdom": "^24.1.0",
+    "hpp": "^0.2.3",
+    "node-cron": "^3.0.3",
+    "ioredis": "^5.4.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0",
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0",
+    "eslint": "^9.3.0",
+    "@eslint/js": "^9.3.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "prettier": "^3.2.5",
+    "@types/jest": "^29.5.12",
+    "mongodb-memory-server": "^9.2.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arjunathorata/myappstatus.git"
+  },
+  "bugs": {
+    "url": "https://github.com/arjunathorata/myappstatus/issues"
+  },
+  "homepage": "https://github.com/arjunathorata/myappstatus#readme",
+  "jest": {
+    "preset": "jest-preset-es6",
+    "testEnvironment": "node",
+    "extensionsToTreatAsEsm": [".js"],
+    "globals": {
+      "jest": {
+        "useESM": true
+      }
+    },
+    "transform": {},
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/app.js",
+      "!src/config/*.js"
+    ],
+    "coverageDirectory": "coverage",
+    "coverageReporters": [
+      "text",
+      "lcov",
+      "html"
+    ],
+    "testMatch": [
+      "**/tests/**/*.test.js",
+      "**/tests/**/*.spec.js"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/tests/setup.js"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "@eslint/js/recommended",
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": "error",
+      "no-console": "warn",
+      "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+      "prefer-const": "error",
+      "no-var": "error"
+    },
+    "env": {
+      "node": true,
+      "es2024": true,
+      "jest": true
+    },
+    "parserOptions": {
+      "ecmaVersion": "latest",
+      "sourceType": "module"
+    }
+  },
+  "prettier": {
+    "semi": true,
+    "trailingComma": "es5",
+    "singleQuote": true,
+    "printWidth": 100,
+    "tabWidth": 2,
+    "useTabs": false
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ],
+    "ext": "js,json",
+    "ignore": [
+      "src/uploads/*",
+      "logs/*",
+      "tests/*"
+    ],
+    "env": {
+      "NODE_ENV": "development"
+    }
+  }
+}
