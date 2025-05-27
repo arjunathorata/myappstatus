@@ -586,4 +586,4 @@ router.delete('/:id',
   processInstanceController.deleteProcessInstance
 );
 
-module.exports = router;
+export default router;

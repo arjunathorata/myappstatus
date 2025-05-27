@@ -1,4 +1,4 @@
-const Joi = require('joi');
+import Joi from 'joi';
 
 const stepSchema = Joi.object({
   stepId: Joi.string()
@@ -279,7 +279,7 @@ const createVersionSchema = Joi.object({
     .allow('')
 });
 
-module.exports = {
+export {
   createProcessTemplateSchema,
   updateProcessTemplateSchema,
   getProcessTemplatesQuerySchema,

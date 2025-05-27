@@ -221,6 +221,14 @@ export const EVENTS = {
   USER_LOGOUT: 'user.logout'
 };
 
+export const PAGINATION = {
+  DEFAULT_PAGE: 1,
+  DEFAULT_LIMIT: 20,
+  MAX_LIMIT: 100,
+  MIN_LIMIT: 1
+};
+
+
 // Default values
 export const DEFAULTS = {
   PAGE_SIZE: 20,
@@ -295,5 +303,6 @@ export default {
   EVENTS,
   DEFAULTS,
   ERROR_MESSAGES,
+  PAGINATION,
   SUCCESS_MESSAGES
 };

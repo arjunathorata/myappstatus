@@ -1,14 +1,15 @@
-const express = require('express');
-const processTemplateController = require('../controllers/processTemplateController');
-const { authenticate, authorize } = require('../middleware/auth');
-const { validate, validateObjectId, validateQuery } = require('../middleware/validation');
-const {
+
+import express from 'express';
+import processTemplateController from '../controllers/processTemplateController.js';
+import { authenticate, authorize } from '../middleware/auth.js';
+import { validate, validateObjectId, validateQuery } from '../middleware/validation.js';
+import {
   createProcessTemplateSchema,
   updateProcessTemplateSchema,
   getProcessTemplatesQuerySchema,
   publishTemplateSchema,
   validateTemplateSchema
-} = require('../validators/processTemplateValidators');
+} from '../validators/processTemplateValidators.js';
 
 const router = express.Router();
 
@@ -519,4 +520,4 @@ router.post('/:id/duplicate',
   processTemplateController.duplicateTemplate
 );
 
-module.exports = router;
+export default router;

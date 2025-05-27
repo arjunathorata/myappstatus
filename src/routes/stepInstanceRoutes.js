@@ -647,4 +647,4 @@ router.post('/:id/claim',
   stepInstanceController.claimTask
 );
 
-module.exports = router;
+export default router;

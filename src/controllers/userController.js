@@ -4,7 +4,7 @@ import StepInstance from '../models/StepInstance.js';
 import ProcessHistory from '../models/ProcessHistory.js';
 import logger from '../utils/logger.js';
 import { AppError } from '../utils/helpers.js';
-import { PAGINATION } from '../utils/constants.js';
+import { DEFAULTS  } from '../utils/constants.js';
 
 class UserController {
   // Get all users with pagination and filtering
